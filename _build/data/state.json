@@ -159,6 +159,33 @@
    "pages": "16-20",
    "master": 7942,
    "site": 5149
+  },
+  {
+   "date": "2026-10-08",
+   "run": "scheduled 23:46 (Chrome dropped after batch 11; resumed ~00:05 10/9 after folder connected)",
+   "themes": [
+    "韓國零食",
+    "日本零食",
+    "泰國零食",
+    "伴手禮禮盒",
+    "療癒小物",
+    "創意小物",
+    "交換禮物",
+    "桌面擺件",
+    "造型夜燈",
+    "香氛蠟燭"
+   ],
+   "theme_pages": "1-5 for first 4, 6-10 after wrap",
+   "tabs": [
+    "全部",
+    "分潤加碼",
+    "熱銷商品",
+    "居家生活"
+   ],
+   "pages": "21-25",
+   "master": 9082,
+   "site": 5889,
+   "note": "分潤加碼 only 63 items (paging throttled in background tab)"
   }
  ],
  "themes": [
@@ -225,13 +252,13 @@
   "泰國零食",
   "伴手禮禮盒"
  ],
- "next_theme": 58,
+ "next_theme": 6,
  "theme_pages": [
-  1,
-  5
+  6,
+  10
  ],
  "themes_per_day": 10,
  "tab_batches_per_day": 4,
- "next_tab": 0,
+ "next_tab": 4,
  "note": "每天：8 個主題關鍵字（從 next_theme 往下，各抓 theme_pages 頁）＋4 個大分類批次（tabs[next_tab..]，頁數 next_page..+4）。主題全部輪完一輪後 theme_pages 往後移 3 頁。 | 10/6 加入社群新品、國外代購關鍵字（使用者：社群最新推出、台灣有人在賣、國內外都可）"
 }
