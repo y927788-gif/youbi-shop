@@ -660,6 +660,52 @@ def shell(path, title, desc, body, current='', depth=0, extra_head='', noindex=F
     open(full, 'w', encoding='utf-8').write(doc)
 
 
+HREFLANG_DG = f'<link rel="alternate" hreflang="zh-Hant" href="{BASE}dungeon.html"><link rel="alternate" hreflang="en" href="{BASE}en/dungeon.html"><link rel="alternate" hreflang="x-default" href="{BASE}en/dungeon.html">'
+def shell_en(path, title, desc, body, js='', og='dungeon', head=''):
+    """English pages (/en/…): no Taiwan shopping chrome, same game account & saves."""
+    root = '../'; canon = BASE + path
+    doc = f"""<!doctype html>
+<html lang="en" data-root="{root}" data-api="{e(SHOP_API or "")}"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>{e(title)}</title><meta name="description" content="{e(desc)}"><link rel="canonical" href="{canon}">{HREFLANG_DG}
+<meta property="og:type" content="website"><meta property="og:title" content="{e(title)}"><meta property="og:description" content="{e(desc)}"><meta property="og:url" content="{canon}"><meta property="og:site_name" content="Night Market Dungeon"><meta property="og:image" content="{BASE}og/{og}.jpg"><meta property="og:image:width" content="1200"><meta property="og:image:height" content="630"><meta name="twitter:card" content="summary_large_image"><meta name="twitter:image" content="{BASE}og/{og}.jpg"><meta property="og:locale" content="en_US">
+<meta name="theme-color" content="#09090D"><link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Ccircle cx='32' cy='32' r='30' fill='%23FFE600' stroke='%231A1714' stroke-width='4'/%3E%3Ctext x='32' y='43' font-size='30' text-anchor='middle' fill='%231A1714' font-family='sans-serif' font-weight='900'%3EN%3C/text%3E%3C/svg%3E">
+{FONTS}<script async src="https://www.googletagmanager.com/gtag/js?id={GA_ID}"></script><script>window.dataLayer=window.dataLayer||[];function gtag(){{dataLayer.push(arguments)}}gtag("js",new Date());gtag("config","{GA_ID}",{{allow_google_signals:false,allow_ad_personalization_signals:false}});</script>
+<link rel="stylesheet" href="{root}assets/site.css?v={VER}">{head}<script src="{root}assets/app.js?v={VER}" defer></script>{(f'<script src="{root}assets/{js}.js?v={VER}" defer></script>') if js else ''}</head>
+<body class="en"><header class="hd"><div class="w"><a class="logo" href="dungeon.html"><b aria-hidden="true">NMD</b><span>Night Market Dungeon</span></a>
+<nav class="nav" aria-label="Menu"><a href="dungeon.html"{' aria-current="page"' if path.endswith('dungeon.html') else ''}>Play</a><a href="terms.html"{' aria-current="page"' if path.endswith('terms.html') else ''}>Terms &amp; Privacy</a><a href="{root}dungeon.html" lang="zh-Hant">中文</a></nav></div></header>
+<main class="w">{body}</main>
+<footer class="ft"><div class="w"><p>Night Market Dungeon · youbi-shop.com　|　<a href="terms.html">Terms of Service &amp; Privacy</a></p><p>Original pixel art. Made in Taiwan.</p></div></footer>
+</body></html>"""
+    full = os.path.join(OUT, path); os.makedirs(os.path.dirname(full), exist_ok=True); open(full, 'w', encoding='utf-8').write(doc)
+
+def shell_en_dungeon():
+    body = ('<span class="kick" style="margin-top:22px">PIXEL ROGUELITE</span><h1 class="ptitle" style="margin-bottom:12px">Night Market Dungeon</h1>'
+            f'<div class="dg" id="dg" data-api="{e(SHOP_API)}" data-gcid="{e(GOOGLE_CLIENT_ID)}"></div>'
+            '<p class="sub" style="margin-top:12px">A pixel action roguelite you can play right in your phone or desktop browser: a 40-floor Story Mode, 50-floor Adventure Mode and online co-op for up to 4 players. '
+            'All original pixel art. Boss Nightcat and the residents talk through AI — their lines are generated automatically, for fun only. Rated 15+ (cartoon pixel violence; blood effects can be turned off). '
+            '<a href="terms.html">Terms of Service &amp; Privacy</a></p>')
+    shell_en('en/dungeon.html', 'Night Market Dungeon — free pixel action roguelite in your browser', 'Fight your way down a dungeon under a Taiwanese night market: charge throws into lightning strikes, craft gear, team up online with up to 4 players. Free, no download.', body, js='dungeon.en')
+    owner = e(SHOP_OWNER) if SHOP_OWNER else '(to be announced)'
+    contact = f'<a href="mailto:{e(SHOP_CONTACT)}">{e(SHOP_CONTACT)}</a>' if SHOP_CONTACT else '(to be announced)'
+    t = ('<article class="art"><h1>Night Market Dungeon — Terms of Service &amp; Privacy</h1>'
+         f'<h2>1. Operator &amp; contact</h2><p>Operated by {owner}, a business registered in Taiwan. Support: {contact}. We reply within 3 business days (in English or Chinese).</p>'
+         '<h2>2. Rating &amp; prices</h2><p>The game is rated <b>15+</b>: cartoon pixel combat with blood effects (can be turned off in Settings) and some spooky floors. The game is free to play. Some outfits can be unlocked with <b>Gold Lanterns</b>. Everything you can buy is cosmetic only and never makes you stronger. There are no loot boxes, gacha or other randomized paid items: every item and its price are shown before you buy.</p>'
+         '<h2>3. Virtual currencies</h2><p><b>Night Coins</b> are earned by playing, or converted from Gold Lanterns (1 Gold Lantern = 20 Night Coins, one way only). They live in your game save (this browser; backed up to the cloud if you have an account) and cannot be turned into Gold Lanterns or money. If you clear your browser data without a cloud backup, your Night Coins are lost with the save.</p>'
+         '<p><b>Gold Lanterns</b> are bought with real money or given in events, and are stored on our server. They can only be used in this game to unlock outfits or convert to Night Coins. They cannot be exchanged for cash, transferred to another account, or redeemed for physical goods.</p>'
+         '<h2>4. Payments</h2><p>Players on the English version pay in <b>US dollars through PayPal</b>; we never receive your card or bank details. Packs: US$2.99 = 90, US$4.99 = 160, US$9.99 = 330, US$29.99 = 1,100 Gold Lanterns. Your bank or PayPal may apply currency conversion fees. Players on the Chinese version pay in New Taiwan dollars through ECPay.</p>'
+         '<h2>5. Refunds</h2><p>Within 7 days of purchase, Gold Lanterns you have not used yet can be refunded in full, no reason needed. Gold Lanterns already used to unlock outfits or convert to Night Coins are digital content delivered at your request (we show the amount and ask you to confirm first), so they cannot be refunded. Double charges, payments that did not arrive, or losses caused by our bugs are always refunded or re-credited. To ask for a refund, email us with the first 8 characters of your account ID (Style Shop → Account) and your PayPal transaction ID. Refunds go back to the original payment method within 14 days. Nothing here limits rights you have under the consumer law of your country.</p>'
+         '<h2>6. Accounts</h2><p>You can play without an account. You can create a free game account (or sign in with Google) from “☁ Save” on the title menu; one is also created automatically the first time you buy. You get a <b>recovery code</b>: keep it private. Use it, or your linked Google account, to get your save back on a new device.</p>'
+         '<h2>7. Minors</h2><p>If you are under 18 (or the age of majority where you live), ask a parent or guardian before buying Gold Lanterns.</p>'
+         '<h2>8. Fair play</h2><p>Cheats, modified clients, packet tampering or abusing bugs to get Gold Lanterns or outfits are not allowed. We may remove items obtained this way after notice; serious cases may lead to account suspension, with unused paid Gold Lanterns refunded pro rata.</p>'
+         '<h2>9. Online play &amp; chat</h2><p>Co-op chat travels directly between players’ devices; our server does not see or store it. Chat with strangers is off by default. Links, contact details, long numbers, requests for personal info or meet-ups, trading and inappropriate content are blocked automatically on both sides. If you use “Report &amp; block”, the other player’s last 10 messages and system ID are sent to our server and kept for 30 days for review.</p>'
+         '<h2>10. AI characters</h2><p>Boss Nightcat and the Manor residents are fictional characters voiced by AI (Cloudflare Workers AI). What you type (up to 80 characters) and basic game state (floor, HP, level, gear names) are sent to our server to generate a reply; we do not store the conversation or use it for training. Replies are automatic, for fun only, and may be wrong. The characters will always admit they are AI if you ask.</p>'
+         '<h2>11. Privacy</h2><p>Your progress is stored in your browser. If you create an account we store only: a random account ID, a hash of your recovery code, your Google account identifier (not your email, name or photo), your cloud save, your Gold Lantern and outfit records, and payment order records (PayPal order ID and amount — never card details). Leaderboards, player names and friends use your system ID, the name you choose (filtered for bad words), your level and scores. Feedback you send is stored with your level, game version and device type; emails and phone numbers in it are masked automatically. We use Google Analytics with cookies to count visits and clicks, with ad personalization turned off; you can block cookies in your browser. To delete your account, cloud save or feedback, send feedback (category “Other”) with the first 8 characters of your account ID; we delete it within 7 days. If you are in the EU/UK, you also have the rights of access, correction, deletion and objection under the GDPR — contact us at the email above.</p>'
+         '<h2>12. Changes &amp; termination</h2><p>We announce changes on this page and in the game. If we ever stop selling Gold Lanterns or end the game, we will announce it at least 30 days in advance and refund unused paid Gold Lanterns pro rata on request.</p>'
+         '<h2>13. Governing law</h2><p>These terms are governed by the laws of Taiwan (Republic of China), without prejudice to mandatory consumer protections of your country of residence. The Chinese version applies to players on the Chinese site; this English version applies to the English site.</p>'
+         '<p class="fine">Last updated: 2026-10-09</p></article>')
+    shell_en('en/terms.html', 'Night Market Dungeon — Terms of Service & Privacy', 'Rating, virtual currency, PayPal payments, refunds, accounts and privacy for Night Market Dungeon.', t)
+
+
 def rar(n):
     return ('UR', 'ur') if n >= 1000000 else ('SSR', 'ssr') if n >= 300000 else ('SR', 'sr') if n >= 50000 else ('R', 'r') if n >= 10000 else ('N', 'n')
 
@@ -826,6 +872,8 @@ def build():
             import urllib.request
             try:
                 urllib.request.urlretrieve(f'https://youbi-shop.com/assets/{f}', f'{OUT}/assets/{f}')
+                if f == 'dungeon.js':  # 英文版也一樣沿用線上那份
+                    urllib.request.urlretrieve('https://youbi-shop.com/assets/dungeon.en.js', f'{OUT}/assets/dungeon.en.js')
             except Exception as ex:
                 print(f'  (skip {f}: no source, live copy unavailable: {ex})')
             continue
@@ -834,6 +882,15 @@ def build():
             os.makedirs('assets_src', exist_ok=True)
             urllib.request.urlretrieve(f'https://raw.githubusercontent.com/y927788-gif/youbi-shop/main/_build/assets_src/{f}', src)
         shutil.copy(src, f'{OUT}/assets/{f}')
+        if f == 'dungeon.js':  # 英文版：字串換成英文（tools/i18n/en.json）→ dungeon.en.js
+            sys.path.insert(0, 'tools/i18n'); from en_build import build as en_build
+            ent, enmiss = en_build(src, None); enp = 'tools/i18n/.dungeon.en.js'; open(enp, 'w', encoding='utf-8').write(ent)
+            if enmiss: print(f'  !! 英文版有 {len(enmiss)} 段沒翻譯：', enmiss[:5])
+            shutil.copy(enp, f'{OUT}/assets/dungeon.en.js')
+            if PROD:
+                import subprocess
+                mj = next((m for m in [os.environ.get('DG_MIN', ''), 'tools/min/min.mjs'] if m and os.path.exists(m)), None)
+                if not (mj and subprocess.run(['node', mj, enp, f'{OUT}/assets/dungeon.en.js']).returncode == 0): print('  !! WARNING: dungeon.en.js 沒有壓縮')
         if PROD and f in PRIVATE_SRC:
             # 上線版壓縮：去註解、把變數名改短（防抄）。壓縮器在私人倉庫 _build/tools/min/（terser 5.31.6），找不到就照原樣並警告
             import subprocess
@@ -979,8 +1036,9 @@ def build():
             f'<div class="dg" id="dg" data-api="{e(SHOP_API)}" data-gcid="{e(GOOGLE_CLIENT_ID)}"></div>'
             '<p class="sub" style="margin-top:12px">像素動作冒險，手機打開就能玩：故事 40 層、冒險 50 層、最多 4 人連線。全原創像素美術；夜貓老闆和居民的對話由 AI 產生、僅供娛樂；禮品攤的商品頁含推廣連結。' + f'{GAME_RATING}・<a href="terms.html">遊戲服務與儲值條款</a></p>'
             '<p class="sub">其他遊戲：<a href="game.html">買爆獸進化論</a>・<a href="play.html">每日翻牌、爆品比大小、猜價格</a></p>')
-    shell('dungeon.html', f'夜市地下城：像素動作冒險小遊戲｜{SITE}', '像素風動作冒險：在夜市底下的地下城打怪、用素材打造原創裝備、跟莊園居民交朋友。電腦手機都能玩。', body, 'dungeon.html', js='dungeon', vp='width=device-width,initial-scale=1,viewport-fit=cover', extra_head=DG_APP_HEAD)
+    shell('dungeon.html', f'夜市地下城：像素動作冒險小遊戲｜{SITE}', '像素風動作冒險：在夜市底下的地下城打怪、用素材打造原創裝備、跟莊園居民交朋友。電腦手機都能玩。', body, 'dungeon.html', js='dungeon', vp='width=device-width,initial-scale=1,viewport-fit=cover', extra_head=DG_APP_HEAD + HREFLANG_DG)
     dg_app_files()
+    shell_en_dungeon(); urls.append('en/dungeon.html'); urls.append('en/terms.html')
     urls.append('dungeon.html')
     # ---- evolve game ----
     body = ('<span class="kick" style="margin-top:22px">ARCADE · EVOLVE</span><h1 class="ptitle" style="margin-bottom:12px">買爆獸進化論</h1>'
