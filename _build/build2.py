@@ -977,7 +977,7 @@ def build():
     # ---- night market dungeon ----
     body = ('<span class="kick" style="margin-top:22px">PIXEL ROGUELITE</span><h1 class="ptitle" style="margin-bottom:12px">夜市地下城</h1>'
             f'<div class="dg" id="dg" data-api="{e(SHOP_API)}" data-gcid="{e(GOOGLE_CLIENT_ID)}"></div>'
-            '<p class="sub" style="margin-top:12px">像素動作冒險：故事模式 8 章 40 層，把被偷走的「萬家燈芯」一片片找回來；冒險模式 50 層（每層規則都不一樣、還有原創人形魔王）、無盡深淵、每日挑戰和最多 4 人連線合作。武器、防具、飾品全部是原創像素道具，在工坊用冒險收集的素材打造（越高階外型越不一樣，還有 3 把要深入無盡深淵才做得出來的神話武器）；莊園居民的「禮品攤」每天會擺出本站真的好物，可以用夜市幣買來送他們（商品頁為推廣連結）。每層起點有 AI 角色「夜貓老闆」可以問攻略、聊天（AI 產生、僅供娛樂）。夜市幣、升級、圖鑑存在你這台裝置的瀏覽器' + ('；金燈籠和 🏮 造型存在伺服器' if SHOP_API else '') + f'。遊戲分級：{GAME_RATING}（15 歲以上；像素打鬥、血花與恐怖場景，遊戲設定可關閉血花）・<a href="terms.html">遊戲服務與儲值條款</a></p>'
+            '<p class="sub" style="margin-top:12px">像素動作冒險，手機打開就能玩：故事 40 層、冒險 50 層、最多 4 人連線。全原創像素美術；夜貓老闆和居民的對話由 AI 產生、僅供娛樂；禮品攤的商品頁含推廣連結。' + f'{GAME_RATING}・<a href="terms.html">遊戲服務與儲值條款</a></p>'
             '<p class="sub">其他遊戲：<a href="game.html">買爆獸進化論</a>・<a href="play.html">每日翻牌、爆品比大小、猜價格</a></p>')
     shell('dungeon.html', f'夜市地下城：像素動作冒險小遊戲｜{SITE}', '像素風動作冒險：在夜市底下的地下城打怪、用素材打造原創裝備、跟莊園居民交朋友。電腦手機都能玩。', body, 'dungeon.html', js='dungeon', vp='width=device-width,initial-scale=1,viewport-fit=cover', extra_head=DG_APP_HEAD)
     dg_app_files()
