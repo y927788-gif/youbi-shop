@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="zh-Hant"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="robots" content="noindex,nofollow">
+<title>夜市地下城・玩家回饋（管理）</title>
+<style>
+:root{--bg:#0b0b12;--panel:#151522;--line:#2a2a3c;--ink:#f2f2f7;--muted:#9a9ab0;--pop:#FFE600;--ok:#39E58C}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--ink);font:15px/1.55 system-ui,-apple-system,"Noto Sans TC",sans-serif}
+main{max-width:860px;margin:0 auto;padding:20px 16px 60px}h1{font-size:1.4rem;margin:0 0 4px}p.s{color:var(--muted);margin:0 0 16px;font-size:.88rem}
+.box{background:var(--panel);border:1px solid var(--line);padding:12px;margin-bottom:12px;display:flex;flex-wrap:wrap;gap:8px;align-items:center}
+input,select,button{font:inherit;color:var(--ink);background:#0f0f18;border:1px solid var(--line);padding:8px 10px}input{flex:1;min-width:200px}
+button{cursor:pointer;background:var(--pop);color:#111;border:0;font-weight:800}button.o{background:transparent;color:var(--ink);border:1px solid var(--line)}
+.stats{display:flex;gap:18px;flex-wrap:wrap;margin:6px 0 12px;color:var(--muted);font-size:.88rem}.stats b{color:var(--pop);font-size:1.1rem;margin-left:4px}
+.it{background:var(--panel);border:1px solid var(--line);border-left:4px solid var(--pop);padding:10px 12px;margin-bottom:8px}.it.done{opacity:.55;border-left-color:var(--line)}
+.meta{display:flex;flex-wrap:wrap;gap:10px;font-size:.8rem;color:var(--muted);margin-bottom:6px}.meta .c{color:var(--ink);font-weight:700}.st{color:var(--pop);letter-spacing:1px}
+.msg{white-space:pre-wrap;word-break:break-word}.it button{margin-top:8px;padding:4px 10px;font-size:.8rem}#err{color:#FF6B7A}
+</style></head><body><main>
+<h1>💬 夜市地下城・玩家回饋</h1>
+<p class="s">只有你自己用。輸入遊戲後台（youbi-shop-api）的 ADMIN_TOKEN 才讀得到，token 只存在這台裝置的瀏覽器裡，不會傳到別的地方。</p>
+<div class="box"><input id="tok" type="password" placeholder="ADMIN_TOKEN" autocomplete="off"><button id="go">讀取</button><button class="o" id="forget">忘記這台裝置的 token</button></div>
+<div class="box"><label>分類 <select id="cat"><option value="">全部</option><option value="fun">😆 好玩的地方</option><option value="bug">🐞 bug</option><option value="idea">💡 新功能</option><option value="balance">⚖️ 難度／平衡</option><option value="art">🎨 畫面／音效</option><option value="other">💬 其他</option></select></label><label><input type="checkbox" id="unread" style="min-width:0;flex:none"> 只看未讀</label><button class="o" id="more" hidden>載入更早的</button></div>
+<p id="err" role="alert"></p><div class="stats" id="stats"></div><div id="list"></div>
+</main>
+<script>
+(function () {
+  var API = 'https://youbi-shop-api.y927788.workers.dev', CN = { fun: '😆 好玩', bug: '🐞 bug', idea: '💡 新功能', balance: '⚖️ 平衡', art: '🎨 畫面', other: '💬 其他' }, items = [], $ = function (id) { return document.getElementById(id); };
+  try { $('tok').value = localStorage.getItem('dgfb_tok') || ''; } catch (e) { }
+  function esc(s) { return String(s == null ? '' : s).replace(/[&<>"']/g, function (c) { return { '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]; }); }
+  function call(b) { return fetch(API + '/api/admin/feedback', { method: 'POST', headers: { 'content-type': 'application/json', authorization: 'Bearer ' + $('tok').value.trim() }, body: JSON.stringify(b) }).then(function (r) { return r.json().then(function (j) { if (!r.ok) throw new Error(j.error || r.status); return j; }); }); }
+  function render() {
+    var only = $('unread').checked, L = items.filter(function (x) { return !only || !x.done; });
+    $('list').innerHTML = L.length ? L.map(function (x) { var d = new Date(x.ts * 1000); return '<div class="it' + (x.done ? ' done' : '') + '"><div class="meta"><span class="c">' + (CN[x.cat] || x.cat) + '</span>' + (x.stars ? '<span class="st">' + '★★★★★'.slice(0, x.stars) + '</span>' : '') + '<span>' + d.toLocaleString('zh-TW', { hour12: false }) + '</span><span>Lv' + x.lv + '</span><span>' + esc(x.ver) + '</span><span>' + (x.plat === 'm' ? '📱 手機' : '💻 電腦') + '</span></div><div class="msg">' + esc(x.msg) + '</div>' + (x.done ? '' : '<button class="o" data-done="' + x.id + '">標成已讀</button>') + '</div>'; }).join('') : '<p class="s">沒有回饋。</p>';
+  }
+  function load(more) {
+    $('err').textContent = ''; try { localStorage.setItem('dgfb_tok', $('tok').value.trim()); } catch (e) { }
+    var b = { limit: 100, cat: $('cat').value || undefined }; if (more && items.length) b.before = items[items.length - 1].ts;
+    call(b).then(function (j) { items = more ? items.concat(j.items) : j.items; var s = j.stats || {}; $('stats').innerHTML = '總共<b>' + (s.n || 0) + '</b>　未讀<b>' + (s.unread || 0) + '</b>　平均評分<b>' + (s.avg ? (+s.avg).toFixed(2) + ' ★' : '—') + '</b>'; $('more').hidden = j.items.length < 100; render(); })
+      .catch(function (e) { $('err').textContent = e.message === 'forbidden' ? 'token 不對' : '讀取失敗：' + e.message; });
+  }
+  $('go').onclick = function () { load(false); }; $('cat').onchange = function () { load(false); }; $('unread').onchange = render; $('more').onclick = function () { load(true); };
+  $('forget').onclick = function () { try { localStorage.removeItem('dgfb_tok'); } catch (e) { } $('tok').value = ''; items = []; render(); $('stats').innerHTML = ''; };
+  $('list').onclick = function (e) { var b = e.target.closest('[data-done]'); if (!b) return; call({ done: +b.dataset.done }).then(function () { items.forEach(function (x) { if (x.id === +b.dataset.done) x.done = 1; }); render(); }); };
+  if ($('tok').value) load(false);
+})();
+</script></body></html>

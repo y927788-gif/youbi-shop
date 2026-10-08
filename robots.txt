@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://youbi-shop.com/sitemap.xml
