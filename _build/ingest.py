@@ -10,7 +10,7 @@ usage: python3 ingest.py <files...>
 import csv, json, os, sys, datetime, re
 
 MASTER = 'data/master.json'
-GENERAL_TABS = {'全部', '分潤加碼', '熱銷商品', '居家生活', '男生包包與配件', '美食、伴手禮', '家電影音', '男女鞋'}
+GENERAL_TABS = {'全部', '分潤加碼', '熱銷商品', '居家生活', '男生包包與配件', '美食、伴手禮', '家電影音', '男女鞋', '女生包包/精品', '女生衣著'}
 today = datetime.date.today().isoformat()
 master = json.load(open(MASTER, encoding='utf-8')) if os.path.exists(MASTER) else {}
 
