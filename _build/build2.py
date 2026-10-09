@@ -677,10 +677,10 @@ def shell_en(path, title, desc, body, js='', og='dungeon', head=''):
 <html lang="en" data-root="{root}" data-api="{e(SHOP_API or "")}"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
 <title>{e(title)}</title><meta name="description" content="{e(desc)}"><link rel="canonical" href="{canon}">{HREFLANG_DG}
 <meta property="og:type" content="website"><meta property="og:title" content="{e(title)}"><meta property="og:description" content="{e(desc)}"><meta property="og:url" content="{canon}"><meta property="og:site_name" content="Night Market Dungeon"><meta property="og:image" content="{BASE}og/{og}.jpg"><meta property="og:image:width" content="1200"><meta property="og:image:height" content="630"><meta name="twitter:card" content="summary_large_image"><meta name="twitter:image" content="{BASE}og/{og}.jpg"><meta property="og:locale" content="en_US">
-<meta name="theme-color" content="#09090D"><link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Ccircle cx='32' cy='32' r='30' fill='%23FFE600' stroke='%231A1714' stroke-width='4'/%3E%3Ctext x='32' y='43' font-size='30' text-anchor='middle' fill='%231A1714' font-family='sans-serif' font-weight='900'%3EN%3C/text%3E%3C/svg%3E">
+<meta name="theme-color" content="#09090D"><link rel="icon" type="image/png" href="{root}app/dg-192.png"><link rel="apple-touch-icon" href="{root}app/dg-180.png">
 {FONTS}<script async src="https://www.googletagmanager.com/gtag/js?id={GA_ID}"></script><script>window.dataLayer=window.dataLayer||[];function gtag(){{dataLayer.push(arguments)}}gtag("js",new Date());gtag("config","{GA_ID}",{{allow_google_signals:false,allow_ad_personalization_signals:false}});</script>
 <link rel="stylesheet" href="{root}assets/site.css?v={VER}">{head}<script src="{root}assets/app.js?v={VER}" defer></script>{(f'<script src="{root}assets/{js}.js?v={VER}" defer></script>') if js else ''}</head>
-<body class="en"><header class="hd"><div class="w"><a class="logo" href="dungeon.html"><b aria-hidden="true">NMD</b><span>Night Market Dungeon</span></a>
+<body class="en"><header class="hd"><div class="w"><a class="logo" href="dungeon.html"><img src="{root}app/dg-logo.png" alt="" width="44" height="44" style="width:44px;height:44px;image-rendering:pixelated;flex:none"><span>Night Market Dungeon</span></a>
 <nav class="nav" aria-label="Menu"><a href="dungeon.html"{' aria-current="page"' if path.endswith('dungeon.html') else ''}>Play</a><a href="terms.html"{' aria-current="page"' if path.endswith('terms.html') else ''}>Terms &amp; Privacy</a><a href="{root}dungeon.html" lang="zh-Hant">中文</a></nav></div></header>
 <main class="w">{body}</main>
 <footer class="ft"><div class="w"><p>Night Market Dungeon · youbi-shop.com　|　<a href="terms.html">Terms of Service &amp; Privacy</a></p><p>Original pixel art. Made in Taiwan.</p></div></footer>
@@ -854,6 +854,17 @@ def dg_app_files():
                     for i2, ch in enumerate(row):
                         if ch in PAL: d.rectangle([lx + i2 * v, int(n * .12) + j * v, lx + (i2 + 1) * v - 1, int(n * .12) + (j + 1) * v - 1], fill=PAL[ch])
             return im
+        def logo():  # v7.6 英文版網站標誌：遊戲主角＋兩盞燈籠，透明背景、像素放大
+            u, v = 5, 3; im = Image.new('RGBA', (96, 96), (0, 0, 0, 0)); d = ImageDraw.Draw(im)
+            for j, row in enumerate(hero):
+                for i2, ch in enumerate(row):
+                    if ch in PAL: d.rectangle([18 + i2 * u, 14 + j * u, 18 + (i2 + 1) * u - 1, 14 + (j + 1) * u - 1], fill=PAL[ch])
+            for lx in (0, 78):
+                for j, row in enumerate(lan):
+                    for i2, ch in enumerate(row):
+                        if ch in PAL: d.rectangle([lx + i2 * v, 4 + j * v, lx + (i2 + 1) * v - 1, 4 + (j + 1) * v - 1], fill=PAL[ch])
+            return im
+        logo().save(f'{OUT}/app/dg-logo.png')
         icon(192, .08).save(f'{OUT}/app/dg-192.png'); icon(512, .08).save(f'{OUT}/app/dg-512.png'); icon(512, .2).save(f'{OUT}/app/dg-512m.png'); icon(180, .08).save(f'{OUT}/app/dg-180.png')
     except Exception as _e:
         print('app icons skipped', _e)
