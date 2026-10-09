@@ -660,6 +660,15 @@ def shell(path, title, desc, body, current='', depth=0, extra_head='', noindex=F
     open(full, 'w', encoding='utf-8').write(doc)
 
 
+def DG_LD(lang):
+    zh = lang == 'zh'
+    d = {'@context': 'https://schema.org', '@type': 'VideoGame', 'name': '夜市地下城' if zh else 'Night Market Dungeon', 'alternateName': 'Night Market Dungeon' if zh else '夜市地下城',
+         'url': BASE + ('dungeon.html' if zh else 'en/dungeon.html'), 'image': BASE + 'og/dungeon.jpg', 'inLanguage': 'zh-Hant' if zh else 'en',
+         'description': ('免費像素動作冒險：故事 40 層、冒險 50 層、最多 4 人連線，手機電腦打開瀏覽器就能玩，不用下載。' if zh else 'Free pixel action roguelite in your browser: 40-floor Story Mode, 50-floor Adventure Mode, online co-op for up to 4 players. No download.'),
+         'genre': ['Action', 'Roguelite', 'Pixel art'], 'gamePlatform': ['Web browser', 'Android', 'iOS', 'PC'], 'applicationCategory': 'Game', 'operatingSystem': 'Any',
+         'playMode': ['SinglePlayer', 'CoOp'], 'numberOfPlayers': {'@type': 'QuantitativeValue', 'minValue': 1, 'maxValue': 4}, 'contentRating': '輔導十五歲級' if zh else 'Rated 15+',
+         'offers': {'@type': 'Offer', 'price': '0', 'priceCurrency': 'TWD' if zh else 'USD', 'availability': 'https://schema.org/InStock'}}
+    return '<script type="application/ld+json">' + json.dumps(d, ensure_ascii=False).replace('</', '<\\/') + '</script>'
 HREFLANG_DG = f'<link rel="alternate" hreflang="zh-Hant" href="{BASE}dungeon.html"><link rel="alternate" hreflang="en" href="{BASE}en/dungeon.html"><link rel="alternate" hreflang="x-default" href="{BASE}en/dungeon.html">'
 def shell_en(path, title, desc, body, js='', og='dungeon', head=''):
     """English pages (/en/…): no Taiwan shopping chrome, same game account & saves."""
@@ -684,7 +693,7 @@ def shell_en_dungeon():
             '<p class="sub" style="margin-top:12px">A pixel action roguelite you can play right in your phone or desktop browser: a 40-floor Story Mode, 50-floor Adventure Mode and online co-op for up to 4 players. '
             'All original pixel art. Boss Nightcat and the residents talk through AI — their lines are generated automatically, for fun only. Rated 15+ (cartoon pixel violence; blood effects can be turned off). '
             '<a href="terms.html">Terms of Service &amp; Privacy</a></p>')
-    shell_en('en/dungeon.html', 'Night Market Dungeon — free pixel action roguelite in your browser', 'Fight your way down a dungeon under a Taiwanese night market: charge throws into lightning strikes, craft gear, team up online with up to 4 players. Free, no download.', body, js='dungeon.en')
+    shell_en('en/dungeon.html', 'Night Market Dungeon — Free Pixel Roguelite, No Download, 4P Co-op', 'Free pixel action roguelite you play right in your browser on phone or PC: fight down a dungeon under a Taiwanese night market, craft gear, and team up online with up to 4 players. No download.', body, js='dungeon.en', head=DG_LD('en'))
     owner = e(SHOP_OWNER) if SHOP_OWNER else '(to be announced)'
     contact = f'<a href="mailto:{e(SHOP_CONTACT)}">{e(SHOP_CONTACT)}</a>' if SHOP_CONTACT else '(to be announced)'
     t = ('<article class="art"><h1>Night Market Dungeon — Terms of Service &amp; Privacy</h1>'
@@ -1036,7 +1045,7 @@ def build():
             f'<div class="dg" id="dg" data-api="{e(SHOP_API)}" data-gcid="{e(GOOGLE_CLIENT_ID)}"></div>'
             '<p class="sub" style="margin-top:12px">像素動作冒險，手機打開就能玩：故事 40 層、冒險 50 層、最多 4 人連線。全原創像素美術；夜貓老闆和居民的對話由 AI 產生、僅供娛樂；禮品攤的商品頁含推廣連結。' + f'{GAME_RATING}・<a href="terms.html">遊戲服務與儲值條款</a></p>'
             '<p class="sub">其他遊戲：<a href="game.html">買爆獸進化論</a>・<a href="play.html">每日翻牌、爆品比大小、猜價格</a></p>')
-    shell('dungeon.html', f'夜市地下城：像素動作冒險小遊戲｜{SITE}', '像素風動作冒險：在夜市底下的地下城打怪、用素材打造原創裝備、跟莊園居民交朋友。電腦手機都能玩。', body, 'dungeon.html', js='dungeon', vp='width=device-width,initial-scale=1,viewport-fit=cover', extra_head=DG_APP_HEAD + HREFLANG_DG)
+    shell('dungeon.html', '夜市地下城｜免費像素動作冒險・免下載・4 人連線', '免費像素動作冒險遊戲，手機電腦打開就能玩、不用下載：故事 40 層、冒險 50 層、最多 4 人連線，在夜市底下的地下城打怪、打造原創裝備、跟莊園居民交朋友。', body, 'dungeon.html', js='dungeon', vp='width=device-width,initial-scale=1,viewport-fit=cover', extra_head=DG_APP_HEAD + HREFLANG_DG + DG_LD('zh'))
     dg_app_files()
     shell_en_dungeon(); urls.append('en/dungeon.html'); urls.append('en/terms.html')
     urls.append('dungeon.html')
