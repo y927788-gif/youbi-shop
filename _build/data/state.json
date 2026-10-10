@@ -213,6 +213,32 @@
    "master": 10225,
    "site": 6744,
    "note": "Shopee renamed tabs: 男生包包與配件→女生包包/精品, 男女鞋→女生衣著. Category tabs are hidden while a keyword is in the search box: clear the search (select + Delete + Return) before tab batches. Tab batches: run prep without await and take screenshots to keep the tab active (else CDP timeout)."
+  },
+  {
+   "date": "2026-10-10",
+   "run": "scheduled 23:46 (folder connected ~00:08 10/11; also ingested un-built harvests from 10/9 23:46 and 10/10 12:46, which had repeated the same keywords because state was never advanced)",
+   "themes": [
+    "日本新品",
+    "2026新款",
+    "網美",
+    "爆紅",
+    "韓國代購",
+    "日本代購",
+    "美國代購",
+    "泰國代購",
+    "歐美",
+    "聯名款"
+   ],
+   "theme_pages": "6-10",
+   "tabs": [
+    "全部",
+    "分潤加碼",
+    "熱銷商品",
+    "居家生活"
+   ],
+   "pages": "1-5",
+   "master": 11434,
+   "site": 7564
   }
  ],
  "themes": [
@@ -279,13 +305,13 @@
   "泰國零食",
   "伴手禮禮盒"
  ],
- "next_theme": 16,
+ "next_theme": 26,
  "theme_pages": [
   6,
   10
  ],
  "themes_per_day": 10,
  "tab_batches_per_day": 4,
- "next_tab": 0,
+ "next_tab": 4,
  "note": "每天：8 個主題關鍵字（從 next_theme 往下，各抓 theme_pages 頁）＋4 個大分類批次（tabs[next_tab..]，頁數 next_page..+4）。主題全部輪完一輪後 theme_pages 往後移 3 頁。 | 10/6 加入社群新品、國外代購關鍵字（使用者：社群最新推出、台灣有人在賣、國內外都可）"
 }
