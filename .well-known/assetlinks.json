@@ -1,0 +1,8 @@
+[{
+  "relation": ["delegate_permission/common.handle_all_urls"],
+  "target": {
+    "namespace": "android_app",
+    "package_name": "com.youbishop.nightmarket",
+    "sha256_cert_fingerprints": ["52:B5:8A:E0:A2:40:B9:44:B1:03:BC:59:D4:84:79:7E:3C:E0:D6:FD:2D:C6:1D:44:E2:50:DC:52:0F:9C:A4:93"]
+  }
+}]
