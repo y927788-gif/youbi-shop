@@ -1,5 +1,5 @@
 {
- "next_page": 1,
+ "next_page": 6,
  "tabs": [
   "全部",
   "分潤加碼",
@@ -239,6 +239,33 @@
    "pages": "1-5",
    "master": 11434,
    "site": 7564
+  },
+  {
+   "date": "2026-10-11",
+   "run": "scheduled 12:46 — harvested only; NOT built yet (D:\\ComfyUI folder not connected). Next run must also ingest 13 CSVs + youbi_harvest JSON from ~12:50-13:00 10/11 in D:\\ComfyUI",
+   "themes": [
+    "限定版",
+    "開箱",
+    "聖誕節",
+    "文創",
+    "公仔",
+    "積木",
+    "桌遊",
+    "拼圖",
+    "復古",
+    "機械鍵盤(<6 pages, skipped)"
+   ],
+   "theme_pages": "6-10",
+   "tabs": [
+    "女生包包/精品",
+    "美食、伴手禮",
+    "家電影音",
+    "女生衣著"
+   ],
+   "pages": "1-5",
+   "harvested": 1299,
+   "master": null,
+   "site": null
   }
  ],
  "themes": [
@@ -305,13 +332,13 @@
   "泰國零食",
   "伴手禮禮盒"
  ],
- "next_theme": 26,
+ "next_theme": 36,
  "theme_pages": [
   6,
   10
  ],
  "themes_per_day": 10,
  "tab_batches_per_day": 4,
- "next_tab": 4,
+ "next_tab": 0,
  "note": "每天：8 個主題關鍵字（從 next_theme 往下，各抓 theme_pages 頁）＋4 個大分類批次（tabs[next_tab..]，頁數 next_page..+4）。主題全部輪完一輪後 theme_pages 往後移 3 頁。 | 10/6 加入社群新品、國外代購關鍵字（使用者：社群最新推出、台灣有人在賣、國內外都可）"
 }
