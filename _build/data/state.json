@@ -242,7 +242,7 @@
   },
   {
    "date": "2026-10-11",
-   "run": "scheduled 12:46 — harvested only; NOT built yet (D:\\ComfyUI folder not connected). Next run must also ingest 13 CSVs + youbi_harvest JSON from ~12:50-13:00 10/11 in D:\\ComfyUI",
+   "run": "scheduled 12:46 (built ~15:00 after D:\\ComfyUI connected)",
    "themes": [
     "限定版",
     "開箱",
@@ -264,8 +264,8 @@
    ],
    "pages": "1-5",
    "harvested": 1299,
-   "master": null,
-   "site": null
+   "master": 12503,
+   "site": 8202
   }
  ],
  "themes": [
