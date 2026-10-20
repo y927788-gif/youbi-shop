@@ -1,6 +1,6 @@
 document.addEventListener('DOMContentLoaded',function(){var root='';var box=document.getElementById('pd'),rel=document.getElementById('rel');
 function render(){var id=location.hash.replace('#','');window.__load(function(d){fetch('data/cats.json').then(function(r){return r.json()}).then(function(cats){
-var p=d.find(function(x){return x.i===id})||d[0];document.title=p.s+'｜今天買這個';box.textContent='';
+var p=d.find(function(x){return x.i===id})||d[0];document.title=p.s+'｜玖悠谷game';box.textContent='';
 var wrap=document.createElement('section');wrap.className='pd';var media=document.createElement('div');media.className='media';
 if(p.v){var v=document.createElement('video');v.src='vid/'+p.i+'.mp4';v.poster=window.__img(p);v.muted=true;v.loop=true;v.playsInline=true;v.autoplay=true;v.controls=true;media.appendChild(v)}
 if(!p.v){var im=document.createElement('img');im.src=window.__img(p,1);im.referrerPolicy='no-referrer';im.alt=p.s;media.appendChild(im)}
