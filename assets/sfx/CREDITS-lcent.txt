@@ -1,0 +1,45 @@
+百節燈蜈 (Hundred-Lantern Centipede) sound effects: lc*.mp3
+=========================================================
+
+Every file is a layered mix of real recordings. Each one stacks 2 to 4 layers that are varispeeded,
+filtered, offset in time, enveloped and loudness-matched. The mix is made by
+_build/tools/sfx/make_lcent.py.
+
+All sources are CC0 1.0 (public domain dedication) from OpenGameArt.org. Attribution is not required;
+the authors are credited here as a courtesy.
+
+  rubberduck    "80 CC0 RPG SFX"           https://opengameart.org/content/80-cc0-rpg-sfx
+  rubberduck    "100 CC0 SFX"              https://opengameart.org/content/100-cc0-sfx
+  artisticdude  "RPG Sound Pack"           https://opengameart.org/content/rpg-sound-pack
+  pauliuw       "Monster or beast sounds"  https://opengameart.org/content/monster-or-beast-sounds
+  qubodup       "Ghost Monster Voice Moaning & Growling"  https://opengameart.org/content/ghost-monster-voice-moaning-growling
+  qubodup       "Ghost breath"             https://opengameart.org/content/ghost-breath
+  qubodup       "Earth Element Magic Spell" https://opengameart.org/content/earth-element-magic-spell
+  qubodup       "5 break, crunch impacts"  https://opengameart.org/content/5-break-crunch-impacts
+  qubodup       "35 wooden cracks/hits/destructions" https://opengameart.org/content/35-wooden-crackshitsdestructions
+  TinyWorlds    "Different steps on wood, stone, leaves, gravel and mud" https://opengameart.org/content/different-steps-on-wood-stone-leaves-gravel-and-mud
+  qubodup       "Swish - bamboo stick weapon swhoshes" https://opengameart.org/content/swish-bamboo-stick-weapon-swhoshes
+
+Files
+  lcroar1-2  roar          creature roar (slowed) + guttural beast + hiss on top + mandible chatter tail + earth low end
+  lchis1-2   bite wind-up  rising hiss + low growl
+  lcsnp1-2   jaw snap      beetle bite + crunch impact + wood crack
+  lcchi1-3   chitter       pulsing beast clicks (high-passed)
+  lcstp1-4   leg skitter   six tiny grains of gravel, leaves, wood and stone footsteps, 15-30 ms apart
+  lcrst1-2   body rustle   leaves + paper
+  lcclk1-3   lantern knock small wood knock + bead rattle
+  lcwsh1-3   body whoosh   bamboo swish slowed down
+  lcthd1-2   ground slam   crunch impact + earth spell low end + heavy wood impact
+  lcrmb      rumble        earth spell slowed a lot + falling stones
+  lcdiv      dive          stones + gravel + mud
+  lcpop1-3   lantern burst wood crack + fire burst + paper
+  lclit1-2   lantern lit   short fire puff
+  lcsht1-3   fireball      fire whoosh + light swish
+  lcgst1-2   ghost fire    ghost moan + shade breath / ghost breath
+  lcdfl1-3   armour hit    dull wood + tiny metal tick + hit
+  lcoil1-3   oil splash    water splash + slime
+  lcign      oil ignites   big fire burst + low end
+  lcsqz1-2   coil squeeze  wood creak + heavy cloth
+  lcdie      defeat        creature death (slowed) + ghost moan + earth low end
+
+No synthesizers, no AI generation.
