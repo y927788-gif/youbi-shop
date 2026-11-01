@@ -1,0 +1,21 @@
+Dragonflame Spear (javelin cosmetic) sound effects: jvt2*.mp3 (stage-2 throw), jvt3*.mp3 (stage-3 throw burst),
+jvig*.mp3 (charge stage-up ignition), jvlp.mp3 (looping fire roar while charging),
+jvhs*.mp3 / jvhb*.mp3 (stage-2 / stage-3 hit explosion), jvwl*.mp3 (hitting a wall or the ground)
+=====================================================================================================
+
+Every file is a layered mix of real recordings (varispeed, filtering, envelopes, loudness matching),
+made with _build/tools/sfx/make_jav.py. No synthesizers, no AI generation.
+
+Sources (all CC0 1.0 Universal, public domain dedication; credited here as a courtesy):
+  - "Fire Staff Collection" by LEGIT Audio
+      https://opengameart.org/content/fire-staff-sound-effects
+      used: LEGIT_FIR_Fire_Staff 3, 6, 7, 8, 9, 11, 14, 17, 20
+  - "JM_FX_Fireball_01" by Julien Matthey
+      https://opengameart.org/content/fireball-1
+  - "25 CC0 bang / firework SFX" (recorded fireworks, cannons and bangs)
+      https://opengameart.org/node/92774
+      used: bang_01, bang_03, bang_09, cannon_01, cannon_04, shot_03
+  - "explosions 4" by EZduzziteh
+      https://opengameart.org/content/explosions-4
+      used: explosion2, explosion3, explosions4
+  - bass, hith1, hith2, met1, met2, sq1, sq2 from this game's own sound set
