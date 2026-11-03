@@ -1,0 +1,48 @@
+鎖鏈舞者・綾 (Chain Dancer · Aya) sound effects: cd*.mp3
+=========================================================
+
+Every file is a layered mix of real recordings. Each one stacks 1 to 4 layers that are varispeeded,
+filtered, offset in time, enveloped and loudness-matched. The mix is made by
+_build/tools/sfx/make_chd.py.
+
+All sources are CC0 1.0 (public domain dedication) from OpenGameArt.org. Attribution is not required;
+the authors are credited here as a courtesy.
+
+  rubberduck    "80 CC0 RPG SFX"                 https://opengameart.org/content/80-cc0-rpg-sfx
+  rubberduck    "100 CC0 SFX"                    https://opengameart.org/content/100-cc0-sfx
+  rubberduck    "100 CC0 SFX #2"                 https://opengameart.org/content/100-cc0-sfx-2
+  rubberduck    "100 CC0 metal and wood SFX"     https://opengameart.org/content/100-cc0-metal-and-wood-sfx
+  rubberduck    "75 CC0 breaking / falling / hit sfx" https://opengameart.org/content/75-cc0-breaking-falling-hit-sfx
+  artisticdude  "RPG Sound Pack"                 https://opengameart.org/content/rpg-sound-pack
+  Jan Schupke   "Fantasy Accessory SFX Library"  https://opengameart.org/content/fantasy-accessory-sfx-library
+  bart          "Chain winch sounds"             https://opengameart.org/content/chain-winch-sounds
+  pwl           "Bell dings/chimes"              https://opengameart.org/content/bell-dingschimes
+  qubodup       "35 wooden cracks/hits/destructions" https://opengameart.org/content/35-wooden-crackshitsdestructions
+  qubodup       "Swish - bamboo stick weapon swhoshes" https://opengameart.org/content/swish-bamboo-stick-weapon-swhoshes
+  qubodup       "Earth Element Magic Spell"      https://opengameart.org/content/earth-element-magic-spell
+
+Files
+  cdbel1-3   ankle bells     small bell + key-ring jingle + coin shimmer
+  cdclk1-3   chain head hit  metal hit + chain rattle tail + small metal
+  cdcli1-3   chain links     chainmail + keys
+  cdcla1-2   chain falls     long chain + falling metal + chainmail
+  cdwsh1-3   chain swing     bamboo swish (slowed) + chainmail
+  cdswi1-2   cloth swish     cloth + swish
+  cdthd1-2   stage landing   wood slam + low hit + earth low end + chainmail
+  cdwod1-2   stage boards    wood impact + crack
+  cdsnp1-2   chain breaks    metal hit + wood crack + spring + chain scatter
+  cdhtp1-2   chain hits you  body hit + chainmail + swish
+  cdpng1-2   perfect counter ringing metal + bell
+  cdsht1-2   shatter         glass breaking + chain
+  cdynk1-2   chain yank      chain winch + chainmail + swish
+  cdcrk1-2   chain-tip crack wood crack + metal hit + swish
+  cdgrd      chain drag      chain winch
+  cdwrl      chain spin      four swishes + chainmail
+  cdtwg1-2   taut chain      metal spring + chainmail
+  cdcrq1-2   creak           wood squeak + cracking
+  cdbom      finisher        metal slam + falling metal + falling rock + earth low end
+  cdclc1-2   spotlight on    switch + metal close
+  cdpop1-2   smoke pop       cork pop + air
+  cdlck      lock-on click   lockbox turn
+  cdtnk1-2   tiny metal      keys
+  cdscr cdtau cdrip cdnal cdkck cdtic   scrape / taut / cloth rip / nail / stomp / tick
