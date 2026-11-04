@@ -1,0 +1,71 @@
+Night-market zone (B1-B50) monster / trap / boss sound effects: z0_*.mp3
+========================================================================
+
+Every file is a layered mix of real recordings: 2 to 6 layers that are varispeeded, filtered,
+enveloped, offset in time and loudness-matched (no synthesizer, no AI generation). The mix is made by
+_build/tools/sfx/make_z0.py; durations and descriptions are in _build/tools/sfx/z0_meta.json.
+
+All sources are CC0 1.0 (public domain dedication). Attribution is not required; the authors are
+credited here as a courtesy.
+
+  rubberduck     "80 CC0 RPG SFX"  https://opengameart.org/content/80-cc0-rpg-sfx   (8 files)
+  rubberduck     "100 CC0 SFX"  https://opengameart.org/content/100-cc0-sfx   (17 files)
+  rubberduck     "100 CC0 SFX #2"  https://opengameart.org/content/100-cc0-sfx-2   (10 files)
+  rubberduck     "100 CC0 metal and wood SFX"  https://opengameart.org/content/100-cc0-metal-and-wood-sfx   (14 files)
+  rubberduck     "75 CC0 breaking / falling / hit sfx"  https://opengameart.org/content/75-cc0-breaking-falling-hit-sfx   (3 files)
+  artisticdude   "RPG Sound Pack"  https://opengameart.org/content/rpg-sound-pack   (13 files)
+  Jan Schupke    "Fantasy Accessory SFX Library"  https://opengameart.org/content/fantasy-accessory-sfx-library   (12 files)
+  qubodup        "Swish - bamboo stick weapon swhoshes"  https://opengameart.org/content/swish-bamboo-stick-weapon-swhoshes   (8 files)
+  qubodup        "Metal Interactions"  https://opengameart.org/content/metal-interactions   (2 files)
+  Independent.nu "35 wooden cracks/hits/destructions"  https://opengameart.org/content/35-wooden-crackshitsdestructions   (1 files)
+  Independent.nu "5 break, crunch impacts"  https://opengameart.org/content/5-break-crunch-impacts   (2 files)
+  TinyWorlds     "Different steps on wood, stone, leaves, gravel and mud"  https://opengameart.org/content/different-steps-on-wood-stone-leaves-gravel-and-mud   (6 files)
+  StarNinjas     "Crowd Shouting/Speaking Ambience"  https://opengameart.org/content/crowd-shoutingspeaking-ambience   (1 files)
+  pauliuw        "Monster or beast sounds"  https://opengameart.org/content/monster-or-beast-sounds   (2 files)
+  qubodup        "Ghost breath"  https://opengameart.org/content/ghost-breath   (1 files)
+  qubodup        "Earth Element Magic Spell"  https://opengameart.org/content/earth-element-magic-spell   (1 files)
+  Versilian Studios (Sam Gossner, Simon Dalzell) "VS Chamber Orchestra: Community Edition (VSCO-2-CE) - percussion"  https://github.com/sgossner/VSCO-2-CE   (22 files)
+
+Files
+  z0_pb_launch.mp3       0.33s  暴走彈珠發射：彈簧放開的顫音＋鋼珠清脆的撞擊＋機構喀一聲＋滾出去的風
+  z0_pb_bounce1.mp3      0.19s  暴走彈珠撞牆反彈（變化 1）：鋼珠撞擊＋小金屬餘響＋牆面悶聲
+  z0_pb_bounce2.mp3      0.18s  暴走彈珠撞牆反彈（變化 2）：鋼珠撞擊＋小金屬餘響＋牆面悶聲
+  z0_pb_bounce3.mp3      0.18s  暴走彈珠撞牆反彈（變化 3）：鋼珠撞擊＋小金屬餘響＋牆面悶聲
+  z0_pb_stun.mp3         0.76s  暴走彈珠暈眩：鐵琴四個音繞圈（叮叮小星星）＋三角鐵＋雪橇鈴
+  z0_ring_throw.mp3      0.34s  竹圈拋出：竹棍揮動的呼咻兩下（旋轉飛出）＋出手時竹子輕響
+  z0_ring_snare.mp3      0.50s  竹圈套中落地：空心竹子咚一聲＋竹圈在地上嘩啦轉＋拍板
+  z0_ring_break.mp3      0.43s  竹圈被打斷：竹子劈裂＋折斷＋碎片彈地
+  z0_torch_on.mp3        0.19s  手電筒開關喀：塑膠開關＋外殼＋彈簧的細響
+  z0_torch_spot.mp3      0.66s  被手電筒照到的警示：聚光燈重喀＋木琴鐵琴叮—叮往上（驚嘆號）
+  z0_coin_hop.mp3        0.23s  假幣彈跳叮噹：銅板落地＋小彈一下
+  z0_coin_fake.mp3       0.24s  假幣被打破：塑膠悶裂＋空心塑膠＋碎粒（和真幣的金屬清響相反）
+  z0_bag_slosh.mp3       0.41s  塑膠袋水晃：瓶中液體晃動＋塑膠袋窸窣＋小氣泡
+  z0_bag_splash.mp3      0.62s  破袋潑水：塑膠袋爆開＋整袋水潑出＋濕拍＋塑膠皺響
+  z0_raffle_shake.mp3    0.52s  摸彩箱搖：紙箱裡的彩券沙沙＋箱身咚咚＋沙鈴兩下
+  z0_raffle_open.mp3     0.54s  摸彩箱掏出：抽出紙條＋手一甩＋響板＋鐵琴揭曉
+  z0_knock_squeak.mp3    0.27s  塑膠公仔吱嘎：關節吱—嘎兩段（門軸摩擦錄音變調）＋細碎吱吱＋塑膠輕碰
+  z0_knock_crack.mp3     0.28s  塑膠公仔裂開：塑膠碎裂＋脆裂＋碎片
+  z0_sand_thump.mp3      0.43s  沙包落地悶響：悶擊＋泥地＋沙粒散開
+  z0_sand_puff.mp3       0.64s  沙包破洩沙：布袋撕開＋沙子傾瀉＋一口氣噗
+  z0_pop.mp3             0.21s  氣球破：尖銳爆裂＋短爆音＋橡膠的圓形悶響＋橡皮甩動
+  z0_pop_gold.mp3        0.64s  金氣球破：氣球爆＋鐵琴兩聲上揚＋三角鐵＋雪橇鈴（閃亮）
+  z0_pop_bomb.mp3        0.38s  紅氣球爆：氣球爆＋小爆炸＋低頻悶擊＋一點火（壓著不吵）
+  z0_dart_throw.mp3      0.13s  飛鏢射出：細竹棍高速揮動＋短促的破風＋出手喀
+  z0_dart_hit.mp3        0.18s  飛鏢插牆：插進木頭的悶響＋尖端刺入＋鏢尾顫動
+  z0_plate_click.mp3     0.24s  壓力板喀：金屬機關按下＋鎖芯轉動＋石板一沉
+  z0_crowd_loop.mp3      3.00s  推擠人潮嘈雜（3 秒無縫循環）：真人群眾聲 4 層錯開（低通、去刺耳）＋拖步＋衣物摩擦
+  z0_step_wood1.mp3      0.26s  木頭人腳步（變化 1）：木地板腳步＋空心木頭身體的叩＋關節小吱
+  z0_step_wood2.mp3      0.22s  木頭人腳步（變化 2）：木地板腳步＋空心木頭身體的叩＋關節小吱
+  z0_step_wood3.mp3      0.28s  木頭人腳步（變化 3）：木地板腳步＋空心木頭身體的叩＋關節小吱
+  z0_redlight_freeze.mp3 0.39s  木頭人定住：拍板啪＋木魚叩＋木頭身體一頓＋關節吱一聲停住
+  z0_pick_snatch.mp3     0.41s  扒手搶走：手一伸的衣物摩擦＋快速破風＋一把銅板被抓走
+  z0_flip.mp3            0.27s  彈珠擋板拍擊：電磁機構撞擊＋橡膠板拍打＋低頻一推＋金屬餘響
+  z0_gs_slam.mp3         0.71s  大史萊姆砸地：黏液重重拍地＋濕黏＋低頻悶擊＋水花＋地面低鳴
+  z0_gs_spit.mp3         0.44s  吐小史萊姆：噗一口＋黏液＋三顆小氣泡（三隻小史萊姆）
+  z0_gs_glop.mp3         0.46s  黏液：黏稠拍落＋咕嘟氣泡＋濕地
+  z0_gimp_cackle.mp3     0.65s  小鬼頭怪笑：精靈嗓音切成嘻嘻嘻嘻嘿五節、逐節降一點＋氣音＋小動物吱吱＋怪物碎念（沒有人話）
+  z0_gimp_charge.mp3     0.80s  小鬼頭蓄力：三角鐵滾奏＋鈴鼓＋精靈長音一起越轉越快往上滑，最後倒放呼咻收進來
+  z0_debut.mp3           0.60s  新東西登場：響板起頭＋鐵琴木琴三音上行＋小鑼墊底＋雪橇鈴三角鐵亮尾（0.6 秒）
+
+Source files used
+  ac_bottle-coffee-shake-03.wav, ac_bottle-glass-uncork-02.wav, ac_bottle-pills-shake-02.wav, ac_bottle-pills-shake-04.wav, ac_coinflip-01.wav, ac_coins-shake-02.wav, ac_container-nuts-01.wav, ac_keyhole-lockbox-turn-02.wav, ac_metal-pot-drop-grain-01.wav, ac_wood-bowl-drop-grain-01.wav, ac_wood-bowl-drop-grain-02.wav, ac_wood-bowl-drop-wood-spoon-03.wav, bfh1_hit_02.ogg, bfh1_rock_hit_01.ogg, bfh1_wood_hit_02.ogg, c100_door_01.ogg, c100_explosion.ogg, c100_gong_02.ogg, c100_other_03.ogg, c100_other_06.ogg, c100_paper_01.ogg, c100_paper_02.ogg, c100_paper_04.ogg, c100_plop_02.ogg, c100_shot_01.ogg, c100_shot_02.ogg, c100_splash_01.ogg, c100_splash_02.ogg, c100_spring_03.ogg, c100_spring_04.ogg, c100_switch_01.ogg, c100_switch_02.ogg, cr_impactcrunch01.flac, cr_impactcrunch03.flac, cs_crowd_shouting.ogg, mi_metal_button_press1.wav, mi_metal_button_press2.wav, mob_Dieing_pixie.wav, mob_Pixie.wav, mw_metal_close_01.ogg, mw_metal_hit_01.ogg, mw_metal_hit_03.ogg, mw_metal_hit_04.ogg, mw_wood_breaking_02.ogg, mw_wood_cracking_01.ogg, mw_wood_cracking_02.ogg, mw_wood_falling_03.ogg, mw_wood_hit_02.ogg, mw_wood_hit_04.ogg, mw_wood_hit_05.ogg, mw_wood_hit_07.ogg, mw_wood_squeak_01.ogg, mw_wood_squeak_02.ogg, r80_blade_01.ogg, r80_creature_misc_07.ogg, r80_creature_slime_01.ogg, r80_item_coins_01.ogg, r80_item_coins_02.ogg, r80_item_wood_02.ogg, r80_spell_fire_06.ogg, r80_wood_01.ogg, rpg_bubble.wav, rpg_bubble2.wav, rpg_bubble3.wav, rpg_cloth-heavy.wav, rpg_cloth.wav, rpg_coin3.wav, rpg_metal-small2.wav, rpg_metal-small3.wav, rpg_mnstr12.wav, rpg_slime3.wav, rpg_slime8.wav, rpg_slime9.wav, rpg_swing2.wav, sfx100v2_air_03.ogg, sfx100v2_footstep_01.ogg, sfx100v2_footstep_02.ogg, sfx100v2_footstep_wet_02.ogg, sfx100v2_footstep_wet_03.ogg, sfx100v2_footstep_wood_02.ogg, sfx100v2_footstep_wood_04.ogg, sfx100v2_misc_31.ogg, sfx100v2_switch_01.ogg, sfx100v2_wood_hit_03.ogg, st_gravel.ogg, st_mud02.ogg, st_stone01.ogg, st_wood01.ogg, st_wood02.ogg, st_wood03.ogg, sw_swosh-02.flac, sw_swosh-03.flac, sw_swosh-06.flac, sw_swosh-09.flac, sw_swosh-12.flac, sw_swosh-21.flac, sw_swosh-30.flac, sw_swosh-36.flac, vs_Sleighbells_Hit_v1_rr1_Mid.wav, vs_Sleighbells_Hit_v1_rr2_Mid.wav, vs_Xylo_Medium_G5_ff_01_far.wav, vs_claves_mf.wav, vs_claves_mf_3.wav, vs_glock_medium_G5.wav, vs_shake2.wav, vs_shake5.wav, vs_slapstick2.wav, vs_slapstick3.wav, vs_slapstick_quiet1.wav, vs_slapstick_quiet2.wav, vs_tambourine_shake.wav, vs_triangle1_hit_mp_muted1.wav, vs_triangle1_hit_mp_muted2.wav, vs_triangle1_roll.wav, vs_triangle3_hit_mf.wav, vs_wood_click_ff_2.wav, vs_wood_click_mp.wav, vs_wood_click_pp_1.wav, vs_wood_click_pp_2.wav, vs_wood_click_pp_3.wav, wd_crack03.flac, x_EarthElementMagicSpell_3.ogg, x_ghostbreath.flac
